@@ -27,5 +27,5 @@ jobs:
       - name: deploy the stack to aws
         run: |
           cd cdk/hello-cdk
-          ../../bin/destory-cdk.sh
+          ../../bin/destroy-cdk.sh
         shell: bash
