@@ -1,0 +1,27 @@
+{
+  "name": "deploying-to-aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RachelSwift/deploying-to-AWS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RachelSwift/deploying-to-AWS/issues"
+  },
+  "homepage": "https://github.com/RachelSwift/deploying-to-AWS#readme",
+  "dependencies": {
+    "aws-cdk": "^2.45.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0"
+  }
+}
