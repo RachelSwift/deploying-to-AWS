@@ -1,0 +1,32 @@
+on: [workflow_dispatch]
+
+jobs:
+  aws_cdk_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # WORKFLOW SETUP
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: use node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      # CREDENTIALS SETUP
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: "eu-west-1"
+      # INSTALL DEPENDENCIES
+      - name: install dependencies
+        run: |
+          npm install
+          cd cdk/hello-cdk && npm i
+      # DEPLOY STACK
+      - name: deploy the stack to aws
+        run: |
+          cd cdk/hello-cdk
+          npx cdk bootstrap aws://${{secrets.AWS_ACCOUNT_NUMBER}}/eu-west-1
+          ../../bin/deploy-cdk.sh
+        shell: bash

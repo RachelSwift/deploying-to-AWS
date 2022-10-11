@@ -1,5 +1,5 @@
 # deploying-to-AWS
-This repo follows a series of different tutorials for producing AWS services in IaC. In some cases i aim to build upon the default configuration.
+This repo follows a series of different tutorials for producing AWS services in IaC. In some cases I aim to build upon the default configuration.
 
 ---
 
