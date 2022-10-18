@@ -29,4 +29,7 @@ This stack creates a simple S3 bucket. This bucket is version controlled and is 
 
 [**Multistack**](https://docs.aws.amazon.com/cdk/v2/guide/stack_how_to_create_multiple_stacks.html)   
 Directory: cdk/multistack 
+__Stack File__ lib/multistack-stack.ts
+__Stack Instansiation File__ bin/multistack.ts
 
+The stack creates an encrypted bucket in us-east-1 and an unencrypted bucket in us-west-1

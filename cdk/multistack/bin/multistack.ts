@@ -3,6 +3,10 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { MultistackStack } from '../lib/multistack-stack';
 
+/* 
+	Each new MultisstackStack, is a new cdk stack that can be deployed
+*/
+
 const app = new cdk.App();
 
 new MultistackStack(app, 'MyWestCdkStack', {
