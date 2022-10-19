@@ -1,9 +1,7 @@
-AWSTemplateFormatVersion: "version date"
+AWSTemplateFormatVersion: "2010-09-09"
 Description: A simple template to create an S3 BucketName
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
-    BucketName: just-a-bucket
-    VersioningConfiguration:
-      Status: Enabled
-    DeletionPolicy: Delete
+    Properties:
+      BucketName: just-a-bucket-jaslksdksdjl.com

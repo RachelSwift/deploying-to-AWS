@@ -23,15 +23,26 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: "eu-west-1"
-  aws_cloudformation_deploy:
-    name: deploy CloudFormation Templates
-    needs: build_environment
-    runs-on: ubuntu-latest
-    steps:
-      # DEPLOY CloudFormation STACK
-      - name: Deploy stack
+      - name: deploy CloudFormation Templates
         uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3
         with:
           name: a-simple-s3-stack
           template: cloud-formation/first-template.yml
           no-fail-on-empty-changeset: "1" # Stops an error from being thrown if the
+
+
+  # aws_cloudformation_deploy:
+
+  #   needs: build_environment
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # DEPLOY CloudFormation STACK
+  #     - name: Deploy stack
+  #       run: |
+  #         pwd
+  #         ls -a
+  #       # uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3
+  #       # with:
+  #       #   name: a-simple-s3-stack
+  #       #   template: cloud-formation/first-template.yml
+  #       #   no-fail-on-empty-changeset: "1" # Stops an error from being thrown if the
